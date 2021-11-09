@@ -20,7 +20,7 @@ public class REPASO {
         // TODO code application logic here
 
         Scanner sc = new Scanner(System.in);
-        int operador1, operador2;
+        int operador1 = 0, operador2 = 0;
         boolean solicitarDatos = true;
         /*
         - MOSTRAMOS MENÚ OPCIONES
@@ -29,9 +29,13 @@ public class REPASO {
         - CUATRO OPCIONES: SUMAR, RESTAR, MULTIPLICAR Y DIVIDIR
         
          */
-        
+
         System.out.println("Bienvenidos al calculato:");
         System.out.println("Introduce dos operandos (entre 100 y -100).");
+        do {
+            System.out.println("Introduce dos operandos (entre 100 y -100).");
+        
+        
         do{
         try{
             //Bloque de código candidaato a lanzar la excepción
@@ -46,7 +50,10 @@ public class REPASO {
                     "Vuelve a introducir los ");
             sc.nextLine();
         }
-        } while (solicitarDatos);
+        } while (solicitarDatos); //Bucle que controla la excepción
+         
+        } while (!((operador1 < 100 && operador1 > -100)
+                && (operador2 < 100 && operador2 > -100)));
     }
 
 }
